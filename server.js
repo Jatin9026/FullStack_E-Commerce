@@ -26,7 +26,10 @@ export const instance = new Razorpay({
 const app = express();
 
 // Middlewares
-app.use(cors());
+app.use(cors({
+  origin: "https://e-commerce-frontend-pu73.onrender.com",
+  credentials: true,
+}));
 app.use(express.json({ limit: '10mb' }));
 app.use(express.urlencoded({ extended: true, limit: '10mb' }));
 app.use(morgan("dev"));

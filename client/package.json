@@ -1,6 +1,8 @@
 {
   "name": "client",
   "proxy": "http://localhost:8080",
+  "homepage": "https://e-commerce-frontend-pu73.onrender.com",
+
   "version": "0.1.0",
   "private": true,
   "dependencies": {
