@@ -47,11 +47,11 @@ const CartPage = () => {
 
    
       // Get Razorpay key
-      const { data: keyData } = await axios.get("/api/v1/payment/getkey");
+      const { data: keyData } = await axios.get("https://e-commerce-backend-mfvo.onrender.com/api/v1/payment/getkey");
     
 
       // Create Razorpay order
-      const { data: orderData } = await axios.post("/api/v1/payment/razorpay", {
+      const { data: orderData } = await axios.post("https://e-commerce-backend-mfvo.onrender.com/api/v1/payment/razorpay", {
         amount: getCartTotal(),
       });
     
@@ -72,7 +72,7 @@ const CartPage = () => {
           
            
             const verifyRes = await axios.post(
-              "/api/v1/payment/paymentverification",
+              "https://e-commerce-backend-mfvo.onrender.com/api/v1/payment/paymentverification",
               {
                 razorpay_order_id: response.razorpay_order_id,
                 razorpay_payment_id: response.razorpay_payment_id,

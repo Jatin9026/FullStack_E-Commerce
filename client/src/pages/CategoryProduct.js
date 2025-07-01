@@ -18,7 +18,7 @@ const CategoryProduct = () => {
 
   const getProductsByCat = async () => {
     try {
-      const { data } = await axios.get(`/api/v1/product/product-category/${params.slug}`);
+      const { data } = await axios.get(`https://e-commerce-backend-mfvo.onrender.com/api/v1/product/product-category/${params.slug}`);
       setProducts(data?.products);
       setCategory(data?.category);
     } catch (error) {

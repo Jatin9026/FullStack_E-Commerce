@@ -35,7 +35,7 @@ const HomePage = () => {
 
   const getAllCategory = async () => {
     try {
-      const { data } = await axios.get("/api/v1/category/get-category");
+      const { data } = await axios.get("https://e-commerce-backend-mfvo.onrender.com/api/v1/category/get-category");
       if (data?.success) setCategories(data.category);
     } catch (error) {
       console.error("Error fetching categories:", error);
@@ -44,7 +44,7 @@ const HomePage = () => {
 
   const getTotal = async () => {
     try {
-      const { data } = await axios.get("/api/v1/product/product-count");
+      const { data } = await axios.get("https://e-commerce-backend-mfvo.onrender.com/api/v1/product/product-count");
       setTotal(data?.total || 0);
     } catch (error) {
       console.error("Error fetching total count:", error);
@@ -54,7 +54,7 @@ const HomePage = () => {
   const getAllProducts = async () => {
     try {
       setLoading(true);
-      const { data } = await axios.get(`/api/v1/product/product-list/${page}`);
+      const { data } = await axios.get(`https://e-commerce-backend-mfvo.onrender.com/api/v1/product/product-list/${page}`);
       setLoading(false);
       if (page === 1) setProducts(data.products);
       else setProducts((prev) => [...prev, ...data.products]);
@@ -66,7 +66,7 @@ const HomePage = () => {
 
   const filterProduct = async () => {
     try {
-      const { data } = await axios.post("/api/v1/product/product-filters", {
+      const { data } = await axios.post("https://e-commerce-backend-mfvo.onrender.com/api/v1/product/product-filters", {
         checked,
         radio,
       });

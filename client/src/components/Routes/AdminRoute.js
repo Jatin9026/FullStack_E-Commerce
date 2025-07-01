@@ -19,7 +19,7 @@ export default function AdminRoute() {
       }
 
       try {
-        const { data } = await axios.get("/api/v1/auth/admin-auth", {
+        const { data } = await axios.get("https://e-commerce-backend-mfvo.onrender.com/api/v1/auth/admin-auth", {
           headers: {
             Authorization: `Bearer ${auth.token}`,
           },

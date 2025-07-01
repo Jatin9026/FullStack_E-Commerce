@@ -13,7 +13,7 @@ const Users = () => {
   // Fetch users from backend
   const getAllUsers = async () => {
     try {
-      const res = await axios.get("/api/v1/auth/all-users");
+      const res = await axios.get("https://e-commerce-backend-mfvo.onrender.com/api/v1/auth/all-users");
       if (res.data?.success) {
         setUsers(res.data.users);
       } else {

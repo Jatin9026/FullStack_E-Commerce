@@ -37,7 +37,7 @@ const AdminOrders = () => {
 
   const fetchAllOrders = async () => {
     try {
-      const { data } = await axios.get("/api/v1/auth/all-orders", {
+      const { data } = await axios.get("https://e-commerce-backend-mfvo.onrender.com/api/v1/auth/all-orders", {
         headers: {
           Authorization: `Bearer ${auth?.token}`,
         },
@@ -51,7 +51,7 @@ const AdminOrders = () => {
   const handleStatusChange = async (orderId, newStatus) => {
     try {
       await axios.put(
-        `/api/v1/auth/order-status/${orderId}`,
+        `https://e-commerce-backend-mfvo.onrender.com/api/v1/auth/order-status/${orderId}`,
         { status: newStatus },
         {
           headers: {

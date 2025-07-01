@@ -25,7 +25,7 @@ const UpdateProduct = () => {
   // Load single product
   const getSingleProduct = async () => {
     try {
-      const { data } = await axios.get(`/api/v1/product/get-product/${params.slug}`);
+      const { data } = await axios.get(`https://e-commerce-backend-mfvo.onrender.com/api/v1/product/get-product/${params.slug}`);
       const p = data.product;
       setId(p._id);
       setName(p.name);
@@ -42,7 +42,7 @@ const UpdateProduct = () => {
   // Load categories
   const getAllCategory = async () => {
     try {
-      const { data } = await axios.get("/api/v1/category/get-category");
+      const { data } = await axios.get("https://e-commerce-backend-mfvo.onrender.com/api/v1/category/get-category");
       if (data?.success) setCategories(data.category);
     } catch (error) {
       toast.error("Error loading categories");
@@ -68,7 +68,7 @@ const UpdateProduct = () => {
     if (photo) productData.append("photo", photo);
 
     try {
-      const { data } = await axios.put(`/api/v1/product/update-product/${id}`, productData);
+      const { data } = await axios.put(`https://e-commerce-backend-mfvo.onrender.com/api/v1/product/update-product/${id}`, productData);
       if (data?.success) {
         toast.success("Product updated successfully");
         navigate("/dashboard/admin/products");
@@ -84,7 +84,7 @@ const UpdateProduct = () => {
   const handleDelete = async () => {
     if (!window.confirm("Are you sure you want to delete this product?")) return;
     try {
-      await axios.delete(`/api/v1/product/delete-product/${id}`);
+      await axios.delete(`https://e-commerce-backend-mfvo.onrender.com/api/v1/product/delete-product/${id}`);
       toast.success("Product deleted successfully");
       navigate("/dashboard/admin/products");
     } catch (error) {

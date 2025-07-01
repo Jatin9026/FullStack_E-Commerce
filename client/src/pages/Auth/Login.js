@@ -24,7 +24,7 @@ const Login = () => {
 
     try {
       setLoading(true);
-      const res = await axios.post("/api/v1/auth/login", { email, password });
+      const res = await axios.post("https://e-commerce-backend-mfvo.onrender.com/api/v1/auth/login", { email, password });
 
       if (res.data.success) {
         toast.success(res.data.message);

@@ -19,7 +19,7 @@ export default function PrivateRoute() {
       }
 
       try {
-        const { data } = await axios.get("/api/v1/auth/user-auth", {
+        const { data } = await axios.get("https://e-commerce-backend-mfvo.onrender.com/api/v1/auth/user-auth", {
           headers: {
             Authorization: `Bearer ${auth.token}`,
           },

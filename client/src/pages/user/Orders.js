@@ -17,7 +17,7 @@ const Orders = () => {
   const fetchOrders = async () => {
     try {
       setLoading(true);
-      const { data } = await axios.get("/api/v1/auth/orders", {
+      const { data } = await axios.get("https://e-commerce-backend-mfvo.onrender.com/api/v1/auth/orders", {
         headers: {
           Authorization: `Bearer ${auth.token}`,
         },
