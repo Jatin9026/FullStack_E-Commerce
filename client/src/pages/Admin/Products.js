@@ -50,7 +50,7 @@ const Products = () => {
                   >
                     <div className="card shadow-sm border-0 rounded-4 h-100">
                     <img
-  src={`/api/v1/product/product-photo/${p._id}`}
+  src={`https://e-commerce-backend-mfvo.onrender.com/api/v1/product/product-photo/${p._id}`}
   alt={p.name}
   className="w-100 rounded-top"
   style={{
