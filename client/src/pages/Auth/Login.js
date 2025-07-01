@@ -9,6 +9,7 @@ const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [loading, setLoading] = useState(false);
+  const [showDummyData, setShowDummyData] = useState(false);
 
   const [auth, setAuth, { login }] = useAuth();
   const navigate = useNavigate();
@@ -24,7 +25,10 @@ const Login = () => {
 
     try {
       setLoading(true);
-      const res = await axios.post("https://e-commerce-backend-mfvo.onrender.com/api/v1/auth/login", { email, password });
+      const res = await axios.post("https://e-commerce-backend-mfvo.onrender.com/api/v1/auth/login", {
+        email,
+        password,
+      });
 
       if (res.data.success) {
         toast.success(res.data.message);
@@ -44,7 +48,7 @@ const Login = () => {
       console.error("Login error:", error);
       toast.error(
         error.response?.data?.message ||
-          "Something went wrong during login"
+        "Something went wrong during login"
       );
     } finally {
       setLoading(false);
@@ -57,15 +61,16 @@ const Login = () => {
         className="container-fluid d-flex align-items-center justify-content-center"
         style={{ minHeight: "92vh", background: "#f4f6f8" }}
       >
-        <div className="col-md-4 col-sm-10">
+        <div className="col-md-5 col-sm-11">
+
+          {/* === Toggle Dummy Credential Button === */}
+          
+          {/* === Dummy Credential Info Box (Conditional) === */}
+          
+          {/* === Login Form Card === */}
           <div className="card shadow rounded-4 p-4 border-0">
-            <h3 className="text-center mb-3 text-primary fw-bold">
-              Welcome Back
-            </h3>
-            <p
-              className="text-center text-muted mb-4"
-              style={{ fontSize: "0.95rem" }}
-            >
+            <h3 className="text-center mb-3 text-primary fw-bold">Welcome Back</h3>
+            <p className="text-center text-muted mb-4" style={{ fontSize: "0.95rem" }}>
               Please login to continue shopping
             </p>
 
@@ -135,8 +140,43 @@ const Login = () => {
                 </span>
               </p>
             </div>
+        </div><div className="text-center mb-3 mt-3">
+            <button
+              className="btn btn-outline-primary btn-sm"
+              onClick={() => setShowDummyData(!showDummyData)}
+            >
+              {showDummyData ? "Hide Demo Login Data" : "Show Demo Login Data"}
+            </button>
           </div>
-        </div>
+{showDummyData && (
+            <div className="bg-white p-3 rounded-3 shadow-sm mb-3">
+              <h6 className="text-primary fw-semibold text-center mb-3"> Demo Login Credentials</h6>
+              <div className="row">
+                {/* User Credentials */}
+                <div className="col-md-6 mb-2">
+                  <div className="border rounded-2 p-2 bg-light">
+                    <strong>User</strong>
+                    <p className="mb-1 text-muted" style={{ fontSize: "0.9rem" }}>
+                      Email: <code>user@gmail.com</code><br />
+                      Password: <code>123456</code>
+                    </p>
+                  </div>
+                </div>
+                {/* Admin Credentials */}
+                <div className="col-md-6 mb-2">
+                  <div className="border rounded-2 p-2 bg-light">
+                    <strong>Admin</strong>
+                    <p className="mb-1 text-muted" style={{ fontSize: "0.9rem" }}>
+                      Email: <code>admin@gmail.com</code><br />
+                      Password: <code>123456</code>
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          )}
+          </div>
+
       </div>
     </Layout>
   );
