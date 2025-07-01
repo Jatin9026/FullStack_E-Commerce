@@ -1,0 +1,195 @@
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@300;400;600&display=swap");
+
+:root {
+    --primary-color: #4F46E5;          /* Indigo (Main Action Color) */
+    --primary-hover: #6366F1;          /* Lighter Indigo for hover */
+    --background: #0F172A;             /* Rich navy background */
+    --surface: #1E293B;                /* Card & Surface color */
+    --text-color: #070707;             /* Light text */
+    --muted-text: #94A3B8;             /* Subtle text (placeholder, labels) */
+    --border-color: #334155;           /* Soft border */
+    --white: #ffffff;
+    --shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
+    --radius: 14px;
+    --transition: 0.3s ease-in-out;
+  }
+  
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  background: linear-gradient(135deg, #EAF6F6 0%, #e7ecec 100%);
+  color: var(--text-color);
+  font-size: 16px;
+  line-height: 1.6;
+  scroll-behavior: smooth;
+}
+
+/* NAVBAR */
+.navbar {
+  background-color: var(--white);
+  box-shadow: var(--shadow);
+  padding: 1rem 2rem;
+  border-bottom: 1px solid var(--light-border);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navbar-brand {
+  font-family: "Playfair Display", serif;
+  font-size: 26px;
+  font-weight: 700;
+  color: var(--primary-color);
+  letter-spacing: 1px;
+}
+
+.navbar .nav-link {
+  color: var(--text-color);
+  margin: 0 14px;
+  padding-bottom: 4px;
+  transition: var(--transition);
+  position: relative;
+}
+
+.navbar .nav-link:hover,
+.navbar .nav-link.active {
+  color: var(--primary-color);
+}
+
+.navbar .nav-link.active::after,
+.navbar .nav-link:hover::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 2px;
+  width: 100%;
+  background: var(--primary-color);
+}
+
+/* BUTTONS */
+.btn {
+  background-color: var(--primary-color);
+  color: var(--white);
+  padding: 12px 24px;
+  border: none;
+  border-radius: var(--radius);
+  font-weight: 500;
+  cursor: pointer;
+  transition: var(--transition);
+  box-shadow: var(--shadow);
+}
+
+.btn:hover {
+  background-color: var(--primary-hover);
+  transform: translateY(-2px);
+}
+
+/* FOOTER */
+.footer {
+  background-color: var(--accent-surface);
+  color: var(--white);
+  padding: 40px 20px;
+  text-align: center;
+}
+
+.footer a {
+  color: var(--white);
+  font-weight: 400;
+  text-decoration: none;
+  margin: 0 10px;
+  transition: var(--transition);
+}
+
+.footer a:hover {
+  color: var(--primary-color);
+}
+
+/* 404 PAGE */
+.pnf {
+  min-height: 70vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  gap: 1rem;
+}
+
+.pnf-title {
+  font-size: 96px;
+  font-weight: 700;
+  color: var(--primary-color);
+}
+
+.pnf-heading {
+  font-size: 24px;
+  color: var(--text-color);
+}
+
+.pnf-btn {
+  border: 2px solid var(--primary-color);
+  background-color: transparent;
+  color: var(--text-color);
+  padding: 10px 24px;
+  border-radius: var(--radius);
+  font-weight: 500;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.pnf-btn:hover {
+  background-color: var(--primary-color);
+  color: var(--white);
+}
+
+/* CONTACT US */
+.contactus {
+  background: linear-gradient(135deg, var(--secondary-color), var(--accent-surface));
+  padding: 60px 40px;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 60vh;
+  border-top: 1px solid var(--light-border);
+}
+
+/* PRODUCT CARD */
+.card {
+  background-color: var(--white);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  overflow: hidden;
+  transition: var(--transition);
+}
+
+
+.card:hover {
+  transform: translateY(-6px);
+}
+
+.card-img-top {
+  height: 200px;
+  object-fit: cover;
+  width: 100%;
+}
+
+/* PRODUCT LINK */
+.product-link {
+  text-decoration: none;
+  color: inherit;
+  transition: var(--transition);
+  display: block;
+}
+
+.product-link:hover .card {
+  transform: translateY(-5px);
+  box-shadow: 0 16px 28px rgba(0, 0, 0, 0.08);
+}
