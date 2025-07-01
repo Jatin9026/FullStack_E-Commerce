@@ -45,7 +45,7 @@ const AuthProvider = ({ children }) => {
     setAuth(newAuth);
     localStorage.setItem("auth", JSON.stringify(newAuth));
     axios.defaults.headers.common["Authorization"] = `Bearer ${token}`;
-    (`Logged in as ${userData?.name}`);
+   
   };
 
   // Logout function
