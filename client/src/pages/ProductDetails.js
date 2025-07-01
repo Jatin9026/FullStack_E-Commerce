@@ -42,7 +42,7 @@ const ProductDetails = () => {
           {/* Product Image */}
           <div className="col-md-6 text-center">
             <img
-              src={`/api/v1/product/product-photo/${product._id}`}
+              src={`https://e-commerce-backend-mfvo.onrender.com/api/v1/product/product-photo/${product._id}`}
               alt={product.name}
               style={{ height: "300px", objectFit: "contain", background: "#f8f9fa", padding: "20px", borderRadius: "12px" }}
               className="img-fluid shadow-sm"

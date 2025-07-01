@@ -118,7 +118,7 @@ const AdminOrders = () => {
                       <div key={idx} className="col-md-4 mb-3">
                         <div className="card border-0 h-100 shadow-sm rounded-3">
                           <img
-                            src={`/api/v1/product/product-photo/${product._id}`}
+                            src={`https://e-commerce-backend-mfvo.onrender.com/api/v1/product/product-photo/${product._id}`}
                             alt={product.name}
                             className="card-img-top"
                             style={{

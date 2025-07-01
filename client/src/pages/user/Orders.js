@@ -117,7 +117,7 @@ const Orders = () => {
                         >
                           <div className="card h-100 border rounded shadow-sm hover-shadow">
                             <img
-                              src={`/api/v1/product/product-photo/${product._id}`}
+                              src={`https://e-commerce-backend-mfvo.onrender.com/api/v1/product/product-photo/${product._id}`}
                               className="card-img-top"
                               alt={product.name}
                               style={{

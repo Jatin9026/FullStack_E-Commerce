@@ -156,7 +156,7 @@ const CartPage = () => {
                     <div className="row g-0 align-items-center">
                       <div className="col-md-3">
                         <img
-                          src={`/api/v1/product/product-photo/${product._id}`}
+                          src={`https://e-commerce-backend-mfvo.onrender.com/api/v1/product/product-photo/${product._id}`}
                           className="img-fluid rounded"
                           alt={product.name}
                           style={{ height: "120px", objectFit: "cover" }}
