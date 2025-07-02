@@ -83,7 +83,7 @@ const ProductDetails = () => {
                     style={{ borderRadius: "14px", overflow: "hidden" }}
                   >
                     <img
-                      src={`/api/v1/product/product-photo/${p._id}`}
+                      src={`https://e-commerce-backend-mfvo.onrender.com/api/v1/product/product-photo/${p._id}`}
                       className="card-img-top"
                       alt={p.name}
                       style={{ height: "180px", objectFit: "contain", padding: "10px", backgroundColor: "#f8f9fa" }}
